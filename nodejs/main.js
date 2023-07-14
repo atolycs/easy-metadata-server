@@ -4,12 +4,9 @@ const fastify = require("fastify")( {
 
 const fs = require("fs")
 
-/*fastify.get('/', function (request, reply) {
-    reply.send({ hello:'world' })
-})*/
 fastify.register(require('./api/route'))
 
-fastify.listen({ port: 3000}, function (err, address) {
+fastify.listen({ port: 3000, host: "169.254.169.254"}, function (err, address) {
     if (err) {
         fastify.log.error(err)
         process.exit(1)
