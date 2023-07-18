@@ -1,3 +1,8 @@
+module_metadata = {
+    name: "hostname",
+    description: "get hostname"
+}
+
 const fs = require("fs")
 const path = require("path")
 const LIBVIRT_DNSMASQ_DIR = "/var/lib/libvirt/dnsmasq"
@@ -15,5 +20,6 @@ function reply_hostname(fastify, options, done) {
     })
     done()
 }
+reply_hostname[Symbol.for("name")] = module_metadata.name
 
 module.exports = reply_hostname

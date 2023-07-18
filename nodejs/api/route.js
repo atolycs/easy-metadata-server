@@ -3,7 +3,6 @@ function _roots(fastify, options, done) {
     fastify.get('/kvm', (request, reply) => {
         reply.send('meta-data/')
     })
-    
     done()
 }
 
